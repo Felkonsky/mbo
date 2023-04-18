@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class TicTacToe implements ActionListener {
 
     boolean playerOneTurn;
-    JButton newGame, speech, quit;
+    JButton newGame, gesture, speech, quit;
     JButton[][] board = new JButton[3][3];
     JLabel status;
     int counter;
@@ -47,7 +47,7 @@ public class TicTacToe implements ActionListener {
         // Container panel for Board and Options
         JPanel containerPanel = new JPanel();
         containerPanel.setBackground(new Color(25,25,25));
-        containerPanel.setPreferredSize(new Dimension(400,400));
+        containerPanel.setPreferredSize(new Dimension(400,575));
 
         // Game panel: Board
         JPanel tttPanel = new JPanel();
@@ -82,8 +82,8 @@ public class TicTacToe implements ActionListener {
         // Panel for Options: Start Game, Speech Recognition and Quit Game
         JPanel bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color(25,25,25));
-        bottomPanel.setPreferredSize(new Dimension(300,200));
-        bottomPanel.setLayout(new GridLayout(3,1));
+        bottomPanel.setPreferredSize(new Dimension(300,250));
+        bottomPanel.setLayout(new GridLayout(4,1));
         bottomPanel.setBorder(new EmptyBorder(25, 0, 0, 0));
 
         newGame = new JButton();
@@ -93,6 +93,14 @@ public class TicTacToe implements ActionListener {
         newGame.setBackground(Color.WHITE);
         newGame.addActionListener(this);
         bottomPanel.add(newGame);
+
+        gesture = new JButton();
+        gesture.setFont(new Font("Bad Script", Font.BOLD,25));
+        gesture.setText("Gesture Control: OFF");
+        gesture.setFocusable(false);
+        gesture.setBackground(Color.WHITE);
+        gesture.addActionListener(this);
+        bottomPanel.add(gesture);
 
         speech = new JButton();
         speech.setFont(new Font("Bad Script", Font.BOLD,25));
@@ -167,6 +175,19 @@ public class TicTacToe implements ActionListener {
                 // DEACTIVATE SPEECH RECOGNITION HERE
             }
         }
+
+        // GESTURE CONTROL
+        if (e.getSource() == gesture) {
+
+            if (gesture.getText().equals("Gesture Control: OFF")) {
+                gesture.setText("Gesture Control: ON");
+                // DO GESTURE CONTROL HERE
+            } else {
+                gesture.setText("Gesture Control: OFF");
+                // DEACTIVATE GESTURE CONTROL HERE
+            }
+        }
+
         // NINE CASES OF DRAWING X and O PLUS NEXT TURN UPDATE
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
