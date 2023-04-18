@@ -1,7 +1,7 @@
 # Tic Tac Toe - Readme
 
 ## .gitignore
-Remove all files except except for plain JAVA classes, etc. to prevent build errors...
+Remove all files, but plain JAVA classes, etc. to prevent build errors...
 
 ## Current Game State
 - JAVA Swing GUI
