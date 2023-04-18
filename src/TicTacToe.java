@@ -223,6 +223,10 @@ public class TicTacToe implements ActionListener {
                 board[1][1].getText().equals("X") &&
                 board[2][1].getText().equals("X")) ||
             (
+                board[2][0].getText().equals("X") &&
+                board[1][1].getText().equals("X") &&
+                board[0][2].getText().equals("X")) ||
+            (
                 board[0][2].getText().equals("X") &&
                 board[1][2].getText().equals("X") &&
                 board[2][2].getText().equals("X"))) {
@@ -253,6 +257,10 @@ public class TicTacToe implements ActionListener {
                 board[0][1].getText().equals("O") &&
                 board[1][1].getText().equals("O") &&
                 board[2][1].getText().equals("O")) ||
+            (
+                board[2][0].getText().equals("O") &&
+                board[1][1].getText().equals("O") &&
+                board[0][2].getText().equals("O")) ||
             (
                 board[0][2].getText().equals("O") &&
                 board[1][2].getText().equals("O") &&
